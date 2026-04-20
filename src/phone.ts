@@ -1,4 +1,7 @@
-export const formatPhone = (phoneNumber: string) => {
+export const formatPhone = (
+  phoneNumber: string,
+  options: { international: boolean } = { international: false },
+) => {
   if (!/^\d+$/.test(phoneNumber)) {
     throw new Error("휴대전화번호 오류: 숫자만 입력할 수 있습니다.");
   }
@@ -7,6 +10,10 @@ export const formatPhone = (phoneNumber: string) => {
     throw new Error("휴대전화번호 오류: 11자리보다 짧습니다.");
   } else if (phoneNumber.length > 11) {
     throw new Error("휴대전화번호 오류: 11자리보다 깁니다.");
+  }
+
+  if (options.international) {
+    return `+82 ${phoneNumber.slice(1, 3)}-${phoneNumber.slice(3, 7)}-${phoneNumber.slice(7, 11)}`;
   }
 
   // 에러가 없을 경우

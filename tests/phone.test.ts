@@ -20,6 +20,11 @@ describe("phoneNumber", () => {
       new Error("휴대전화번호 오류: 숫자만 입력할 수 있습니다."),
     );
   });
+  it("국제번호 포멧", () => {
+    expect(formatPhone("01012341234", { international: true })).toBe(
+      "+82 10-1234-1234",
+    );
+  });
 });
 
 describe("homeNumber", () => {
