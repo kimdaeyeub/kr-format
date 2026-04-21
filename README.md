@@ -1,5 +1,7 @@
 # kr-format
 
+![Test](https://github.com/kimdaeyeub/kr-format/actions/workflows/test.yml/badge.svg)
+
 한국에서 자주 쓰는 **표시용 포맷·마스킹** 유틸리티 모음입니다.
 
 ## 설치
@@ -46,14 +48,14 @@ mask("9901011234567", { type: "unformatted" }); // "9901011******"
 
 ## API 요약
 
-| 심볼 | 설명 |
-| --- | --- |
-| `formatPhone` | 휴대전화 11자리 → `0XX-XXXX-XXXX` 또는 `+82 …` |
+| 심볼              | 설명                                                  |
+| ----------------- | ----------------------------------------------------- |
+| `formatPhone`     | 휴대전화 11자리 → `0XX-XXXX-XXXX` 또는 `+82 …`        |
 | `formatHomePhone` | 유선 7자리(지역번호 제외) 또는 지역번호 포함 9~10자리 |
-| `formatMoney` | `half-format`(콤마+원) / `full-format`(만·억 등 혼합) |
-| `nameMarking` | 한글 이름 마스킹, `onlyFamilyName` 옵션 |
-| `residentNumber` | 13자리 숫자 ↔ `6자리-7자리` 문자열 변환 |
-| `mask` | 주민번호 형식 문자열의 뒷자리 일부 마스킹 |
+| `formatMoney`     | `half-format`(콤마+원) / `full-format`(만·억 등 혼합) |
+| `nameMarking`     | 한글 이름 마스킹, `onlyFamilyName` 옵션               |
+| `residentNumber`  | 13자리 숫자 ↔ `6자리-7자리` 문자열 변환               |
+| `mask`            | 주민번호 형식 문자열의 뒷자리 일부 마스킹             |
 
 오류 시 모든 함수는 `throw new Error("…")`를 사용하며, 메시지는 `휴대전화번호 오류:`, `유선전화번호 오류:`, `이름 오류:`, `주민등록번호 오류:`, `금액 오류:`처럼 **도메인 접두어**로 시작합니다.
 
