@@ -2,9 +2,15 @@ export const formatMoney = (
   money: number,
   options: { format: "full-format" | "half-format" },
 ): string => {
-  if (!Number.isFinite(money)) throw new Error("유한한 숫자만 허용합니다.");
-  if (!Number.isInteger(money)) throw new Error("정수만 허용합니다.");
-  if (money < 0) throw new Error("0 이상의 숫자만 허용합니다.");
+  if (!Number.isFinite(money)) {
+    throw new Error("금액 오류: 유한한 숫자만 허용합니다.");
+  }
+  if (!Number.isInteger(money)) {
+    throw new Error("금액 오류: 정수만 허용합니다.");
+  }
+  if (money < 0) {
+    throw new Error("금액 오류: 0 이상의 숫자만 허용합니다.");
+  }
 
   if (options.format === "half-format") {
     return `${money.toLocaleString("ko-KR")}원`;

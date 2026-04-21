@@ -73,31 +73,31 @@ describe("formatMoney", () => {
   describe("예외 처리", () => {
     it("음수", () => {
       expect(() => formatMoney(-1000, { format: "half-format" })).toThrow(
-        "0 이상의 숫자만 허용합니다.",
+        "금액 오류: 0 이상의 숫자만 허용합니다.",
       );
       expect(() => formatMoney(-1000, { format: "full-format" })).toThrow(
-        "0 이상의 숫자만 허용합니다.",
+        "금액 오류: 0 이상의 숫자만 허용합니다.",
       );
     });
 
     it("소수점", () => {
       expect(() => formatMoney(9000.5, { format: "half-format" })).toThrow(
-        "정수만 허용합니다.",
+        "금액 오류: 정수만 허용합니다.",
       );
       expect(() => formatMoney(9000.5, { format: "full-format" })).toThrow(
-        "정수만 허용합니다.",
+        "금액 오류: 정수만 허용합니다.",
       );
     });
 
     it("NaN", () => {
       expect(() => formatMoney(NaN, { format: "half-format" })).toThrow(
-        "유한한 숫자만 허용합니다.",
+        "금액 오류: 유한한 숫자만 허용합니다.",
       );
     });
 
     it("Infinity", () => {
       expect(() => formatMoney(Infinity, { format: "half-format" })).toThrow(
-        "유한한 숫자만 허용합니다.",
+        "금액 오류: 유한한 숫자만 허용합니다.",
       );
     });
   });

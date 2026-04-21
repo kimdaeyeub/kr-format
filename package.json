@@ -7,9 +7,9 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     }
   },
   "files": [
@@ -19,7 +19,8 @@
     "build": "tsup",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "korea",
@@ -29,11 +30,19 @@
     "mask",
     "korean"
   ],
-  "author": "",
+  "author": "kimdaeyeub",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimdaeyeub/kr-format.git"
+  },
+  "homepage": "https://github.com/kimdaeyeub/kr-format#readme",
+  "bugs": {
+    "url": "https://github.com/kimdaeyeub/kr-format/issues"
+  },
   "devDependencies": {
     "tsup": "^8.5.1",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.4"
+    "vitest": "^3.2.4"
   }
 }

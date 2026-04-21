@@ -12,6 +12,12 @@ export const formatPhone = (
     throw new Error("휴대전화번호 오류: 11자리보다 깁니다.");
   }
 
+  if (!/^01[016789]\d{8}$/.test(phoneNumber)) {
+    throw new Error(
+      "휴대전화번호 오류: 휴대전화 앞자리(010, 011, 016, 017, 018, 019)만 허용합니다.",
+    );
+  }
+
   if (options.international) {
     return `+82 ${phoneNumber.slice(1, 3)}-${phoneNumber.slice(3, 7)}-${phoneNumber.slice(7, 11)}`;
   }

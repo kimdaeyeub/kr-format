@@ -20,6 +20,13 @@ describe("phoneNumber", () => {
       new Error("휴대전화번호 오류: 숫자만 입력할 수 있습니다."),
     );
   });
+  it("휴대전화 앞자리가 허용 목록이 아닌 경우", () => {
+    expect(() => formatPhone("07012345678")).toThrow(
+      new Error(
+        "휴대전화번호 오류: 휴대전화 앞자리(010, 011, 016, 017, 018, 019)만 허용합니다.",
+      ),
+    );
+  });
   it("국제번호 포멧", () => {
     expect(formatPhone("01012341234", { international: true })).toBe(
       "+82 10-1234-1234",
