@@ -1,6 +1,6 @@
 {
   "name": "kr-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "한국 특화 포맷터 유틸리티 라이브러리",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -28,7 +28,14 @@
     "phone",
     "money",
     "mask",
-    "korean"
+    "korean",
+    "한국",
+    "주민번호",
+    "돈",
+    "원",
+    "전화번호",
+    "지역번호",
+    "이름"
   ],
   "author": "kimdaeyeub",
   "license": "ISC",
